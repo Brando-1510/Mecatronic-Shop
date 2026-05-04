@@ -1,0 +1,524 @@
+
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Tienda-Electronica</title>
+    <link rel='stylesheet' href='main.css'>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src='main.js'></script>
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+</head>
+<body>
+    <header class="site-header" id="site-header">
+        <div class="container site-header__container">
+            <a href="index.html" class="logo" aria-label="Ir al inicio">
+                <img src="/assets/logos/logo-nodex.png" alt="Logo Tienda" class="site-header__logo-img"/>
+            </a>
+
+            <form class="header-search" role="search" aria-label="Búsqueda rápida">
+                <label for="header-search-input" class="sr-only">Buscar producto</label>
+                <input type="search" id="header-search-input" class="header-search__input" placeholder="Busca tu producto"/>
+                <button type="submit" class="header-search__button">Buscar</button>
+            </form>
+
+            <div class="site-header__actions">
+                <a href="#" class="site-header__action">Cuenta</a>
+                <a href="pages/carrito.html" class="site-header__cart">Carrito <span class="site-header__cart-count" id="cart-count">0</span></a>
+                <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            </div>
+
+            <nav class="site-nav" aria-label="Navegación principal">
+                <ul class="site-nav__list">
+                    <li class="site-nav__item"><a href="pages/catalogo.html" class="site-nav__link">Catálogo</a></li>
+                    <li class="site-nav__item"><a href="#projects" class="site-nav__link">Proyectos</a></li>
+                    <li class="site-nav__item"><a href="#kits" class="site-nav__link">Kits/BOM</a></li>
+                    <li class="site-nav__item"><a href="#quick-compare" class="site-nav__link">Comparador rápido</a></li>
+                    <li class="site-nav__item"><a href="#support" class="site-nav__link">Soporte</a></li>
+                </ul>
+            </nav>
+        </div> 
+    </header>
+
+    
+    <main id="main-content">
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <span class="section-badge">Tienda-asistente técnico</span>
+                    <h1 class="hero__title" id="hero-title">Componentes electrónicos y eléctricos para proyectos de robótica, mecatrónica y electrónica.</h1>
+                    <p class="hero__text">Encuentra productos por nombre, valor, voltaje, corriente, compatibilidad o tipo de proyecto.</p>
+
+                    <div class="hero__actions">
+                        <a href="pages/catalogo.html" class="button button--primary">Ver catálogo</a>
+                        <a href="#technical-search" class="button button--secondary">Buscar componente</a>
+                    </div>
+                </div>
+                <div aria-hidden="true">
+                    <img src="/assets/images/upscalemedia-transformed.png" alt="" class="hero__image"/>
+                </div>
+                <!-- <div class="hero__visual" aria-hidden="true">
+                </div> -->
+            </div>
+        </section>
+
+        <!-- BUACADOR TECNICO -->
+        <section class="technical-search" id="technical-search" aria-labelledby="technical-search-title">
+            <div class="container technical-search__container">
+                <div class="section-heading">
+                    <span class="section-badge">Búsqueda técnica</span>
+                    <h2 class="section-heading__title" id="technical-search-title">Busca por parámetro, no solo por nombre.</h2>
+                    <p class="section-heading__text">Ideal para seleccionar componentes compatibles con placas, sensores, motores, fuentes y módulos.</p>
+                </div>
+                <form class="technical-search__form" id="technical-search-form">
+                    <div class="technical-search__grid">
+
+                        <div class="form-group">
+                            <label for="search-name" class="form-group__label">Nombre o referencia</label>
+                            <input type="search" id="search-name" class="form-group__control" placeholder="ESP32, LM358, 1N4007..."/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="search-value" class="form-group__label">Valor</label>
+                            <input type="text" id="search-value" class="form-group__control" placeholder="10k, 100uF, 5A..."/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="search-voltage" class="form-group__label">Voltaje</label>
+                            <input type="text" id="search-voltage" class="form-group__control" placeholder="3.3V, 5V, 12V..."/>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="search-current" class="form-group__label">Corriente</label>
+                            <input type="text" id="search-current" class="form-group__control" placeholder="500mA, 1A, 10A..."/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="search-category" class="form-group__label">Categoría</label>
+                            <select id="search-category" class="form-group__control">
+                                <option value="">Todas</option>
+                                <option value="microcontroladores">Microcontroladores</option>
+                                <option value="componentes-electronicos">Componentes electrónicos</option>
+                                <option value="componentes-electricos">Componentes eléctricos</option>
+                                <option value="sensores">Sensores</option>
+                                <option value="herramientas">Herramientas</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="search-compatibility" class="form-group__label">Compatibilidad</label>
+                            <select id="search-compatibility" class="form-group__control">
+                                <option value="">Cualquiera</option>
+                                <option value="arduino">Arduino</option>
+                                <option value="esp32">ESP32</option>
+                                <option value="raspberry-pi">Raspberry Pi</option>
+                                <option value="protoboard">Protoboard</option>
+                                <option value="12v">Sistema 12V</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="technical-search__actions">
+                        <button type="submit" class="button button--primary">Buscar</button>
+                        <button type="reset" class="button button--ghost">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- CATEGORÍAS PRINCIPALES -->
+        <section class="categories" id="categories" aria-labelledby="categories-title">
+            <div class="container categories__container">
+                <div class="section-heading">
+                    <span class="section-badge">Catálogo técnico</span>
+                    <h2 class="section-heading__title" id="categories-title">Categorías principales</h2>
+                </div>
+
+                <div class="categories__grid">
+                    <a href="./pages/catalogo.html?category=microcontroladores" class="category-card">
+                        <img src="./assets/icons/microcontroller.svg" alt="" class="category-card__icon" />
+                        <h3 class="category-card__title">Placas y microcontroladores</h3>
+                    </a>
+
+                    <a href="./pages/catalogo.html?category=electronicos" class="category-card">
+                        <img src="./assets/icons/components.svg" alt="" class="category-card__icon" />
+                        <h3 class="category-card__title">Componentes electrónicos</h3>
+                    </a>
+
+                    <a href="./pages/catalogo.html?category=electricos" class="category-card">
+                        <img src="./assets/icons/electric.svg" alt="" class="category-card__icon" />
+                        <h3 class="category-card__title">Componentes eléctricos</h3>
+                    </a>
+
+                    <a href="./pages/catalogo.html?category=sensores" class="category-card">
+                        <img src="./assets/icons/sensor.svg" alt="" class="category-card__icon" />
+                        <h3 class="category-card__title">Sensores y módulos</h3>
+                    </a>
+
+                    <a href="./pages/catalogo.html?category=herramientas" class="category-card">
+                        <img src="./assets/icons/tools.svg" alt="" class="category-card__icon" />
+                        <h3 class="category-card__title">Herramientas</h3>
+                    </a>
+
+                    <a href="./pages/catalogo.html?category=soldadura" class="category-card">
+                        <img src="./assets/icons/soldering.svg" alt="" class="category-card__icon" />
+                        <h3 class="category-card__title">Soldadura y consumibles</h3>
+                    </a>
+
+                    <a href="./pages/catalogo.html?category=cables" class="category-card">
+                        <img src="./assets/icons/cables.svg" alt="" class="category-card__icon" />
+                        <h3 class="category-card__title">Cables y conectores</h3>
+                    </a>
+
+                    <a href="#kits" class="category-card">
+                        <img src="./assets/icons/kit.svg" alt="" class="category-card__icon" />
+                        <h3 class="category-card__title">Kits por proyecto</h3>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- COMPRAR POR PROYECTO -->
+        <section class="projects" id="projects" aria-labelledby="projects-title">
+            <div class="container projects__container">
+                <div class="section-heading">
+                    <span class="section-badge">Compra guiada</span>
+                    <h2 class="section-heading__title" id="projects-title">Compra por proyecto</h2>
+                    <p class="section-heading__text">Selecciona componentes según lo que quieres construir, no pieza por pieza.</p>
+                </div>
+
+                <div class="projects__grid" id="project-list">
+                    <article class="project-card">
+                        <img src="./assets/icons/robot.svg" alt="" class="project-card__icon" />
+                        <h3 class="project-card__title">Robot móvil</h3>
+                        <p class="project-card__text">Motores, driver, batería, sensores y placa de control.</p>
+                        <a href="./pages/catalogo.html?project=robot-movil" class="project-card__link">Ver componentes</a>
+                    </article>
+                    <article class="project-card">
+                        <img src="./assets/icons/iot.svg" alt="" class="project-card__icon" />
+                        <h3 class="project-card__title">Sistema IoT con ESP32</h3>
+                        <p class="project-card__text">ESP32, sensores, relés, fuente y módulos de comunicación.</p>
+                        <a href="./pages/catalogo.html?project=iot-esp32" class="project-card__link">Ver componentes</a>
+                    </article>
+                    <article class="project-card">
+                        <img src="./assets/icons/power-supply.svg" alt="" class="project-card__icon" />
+                        <h3 class="project-card__title">Fuente de alimentación</h3>
+                        <p class="project-card__text">Reguladores, capacitores, diodos, fusibles y borneras.</p>
+                        <a href="./pages/catalogo.html?project=fuente" class="project-card__link">Ver componentes</a>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PRODUCTOS DESTACADOS -->
+        <section class="featured-products" id="featured-products" aria-labelledby="featured-products-title">
+            <div class="container featured-products__container">
+                <div class="section-heading section-heading--row">
+                    <div>
+                        <span class="section-badge">Selección técnica</span>
+                        <h2 class="section-heading__title" id="featured-products-title">Productos destacados</h2>
+                    </div>
+
+                    <a href="./pages/catalogo.html" class="section-heading__link">Ver catálogo completo</a>
+                </div>
+                <div class="product-grid" id="featured-products-list">
+                    <article class="product-card" data-product-id="esp32-devkit">
+                        <div class="product-card__media">
+                            <img src="./assets/images/products/esp32-devkit.png" alt="ESP32 DevKit" class="product-card__image" />
+                        </div>
+
+                        <div class="product-card__body">
+                            <span class="product-card__category">Microcontrolador</span>
+                            <h3 class="product-card__title">ESP32 DevKit</h3>
+
+                            <ul class="product-card__specs">
+                                <li>WiFi + Bluetooth</li>
+                                <li>Lógica 3.3V</li>
+                                <li>Compatible con Arduino IDE</li>
+                            </ul>
+
+                            <div class="product-card__footer">
+                                <span class="product-card__price">C$ 000.00</span>
+                                <button type="button" class="button button--small add-to-cart">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-product-id="relay-5v">
+                        <div class="product-card__media">
+                            <img src="./assets/images/products/relay-5v.png" alt="Módulo relay 5V" class="product-card__image" />
+                        </div>
+
+                        <div class="product-card__body">
+                            <span class="product-card__category">Módulo eléctrico</span>
+                            <h3 class="product-card__title">Módulo relay 5V</h3>
+
+                            <ul class="product-card__specs">
+                                <li>Control de cargas</li>
+                                <li>Entrada 5V</li>
+                                <li>Uso con Arduino / ESP32</li>
+                            </ul>
+
+                            <div class="product-card__footer">
+                                <span class="product-card__price">C$ 000.00</span>
+                                <button type="button" class="button button--small add-to-cart">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-product-id="motor-dc">
+                        <div class="product-card__media">
+                            <img src="./assets/images/products/motor-dc.png" alt="Motor DC" class="product-card__image" />
+                        </div>
+
+                        <div class="product-card__body">
+                            <span class="product-card__category">Actuador</span>
+                            <h3 class="product-card__title">Motor DC</h3>
+
+                            <ul class="product-card__specs">
+                                <li>Aplicación robótica</li>
+                                <li>Requiere driver</li>
+                                <li>Uso con fuente externa</li>
+                            </ul>
+
+                            <div class="product-card__footer">
+                                <span class="product-card__price">C$ 000.00</span>
+                                <button type="button" class="button button--small add-to-cart">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-product-id="electronic-kit">
+                        <div class="product-card__media">
+                            <img src="./assets/images/products/motor-dc.png" alt="Motor DC" class="product-card__image" />
+                        </div>
+
+                        <div class="product-card__body">
+                            <span class="product-card__category">Kits</span>
+                            <h3 class="product-card__title">Kit básico de electrónica</h3>
+
+                            <ul class="product-card__specs">
+                                <li>Aplicación robótica</li>
+                                <li>Requiere driver</li>
+                                <li>Uso con fuente externa</li>
+                            </ul>
+
+                            <div class="product-card__footer">
+                                <span class="product-card__price">C$ 000.00</span>
+                                <button type="button" class="button button--small add-to-cart">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card" data-product-id="motor-dc">
+                        <div class="product-card__media">
+                            <img src="./assets/images/products/motor-dc.png" alt="Motor DC" class="product-card__image" />
+                        </div>
+
+                        <div class="product-card__body">
+                            <span class="product-card__category">Actuador</span>
+                            <h3 class="product-card__title">Motor DC</h3>
+
+                            <ul class="product-card__specs">
+                                <li>Aplicación robótica</li>
+                                <li>Requiere driver</li>
+                                <li>Uso con fuente externa</li>
+                            </ul>
+
+                            <div class="product-card__footer">
+                                <span class="product-card__price">C$ 000.00</span>
+                                <button type="button" class="button button--small add-to-cart">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- KITS / BOM -->
+        <section class="kits" id="kits" aria-labelledby="kits-title">
+            <div class="container kits__container">
+                <div class="section-heading">
+                    <span class="section-badge">Listas de materiales</span>
+                    <h2 class="section-heading__title" id="kits-title">Kits/BOM recomendados</h2>
+                    <p class="section-heading__text">Paquetes de componentes agrupados por proyecto para reducir errores de selección.</p>
+                </div>
+
+                <div class="kits__grid" id="kits-list">
+                    <article class="kit-card">
+                        <h3 class="kit-card__title">Kit Robot 2WD</h3>
+                        <p class="kit-card__text">Componentes base para un robot móvil de dos ruedas.</p>
+                        <ul class="kit-card__items">
+                            <li>Chasis</li>
+                            <li>Motores DC</li>
+                            <li>Driver de motor</li>
+                            <li>Placa de control</li>
+                        </ul>
+                        <button type="button" class="button button--primary">Ver kit</button>
+                    </article>
+
+                    <article class="kit-card">
+                        <h3 class="kit-card__title">Kit ESP32 IoT</h3>
+                        <p class="kit-card__text">Componentes para proyectos conectados por WiFi.</p>
+                        <ul class="kit-card__items">
+                            <li>ESP32</li>
+                            <li>Sensores</li>
+                            <li>Relés</li>
+                            <li>Fuente</li>
+                        </ul>
+                        <button type="button" class="button button--primary">Ver kit</button>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- COMPARADOR RÁPIDO -->
+        <section class="quick-compare" id="quick-compare" aria-labelledby="quick-compare-title">
+            <div class="container quick-compare__container">
+                <div class="section-heading">
+                    <span class="section-badge">Comparación técnica</span>
+                    <h2 class="section-heading__title" id="quick-compare-title">Comparador rápido</h2>
+                    <p class="section-heading__text">Compara productos por voltaje, corriente, potencia, compatibilidad y uso recomendado.</p>
+                </div>
+
+                <div class="quick-compare__content">
+                    <div class="quick-compare__slots" id="compare-slots">
+                        <button type="button" class="compare-slot">Agregar producto</button>
+                        <button type="button" class="compare-slot">Agregar producto</button>
+                    </div>
+
+                    <aside class="compatibility-box" aria-labelledby="compatibility-title">
+                        <h3 class="compatibility-box__title" id="compatibility-title">Compatibilidad</h3>
+                        <ul class="compatibility-box__list">
+                            <li class="compatibility-box__item">Voltaje lógico</li>
+                            <li class="compatibility-box__item">Corriente máxima</li>
+                            <li class="compatibility-box__item">Fuente requerida</li>
+                            <li class="compatibility-box__item">Placa compatible</li>
+                        </ul>
+                    </aside>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GUÍAS / SOPORTE -->
+        <section class="support" id="support" aria-labelledby="support-title">
+            <div class="container support__container">
+                <div class="section-heading">
+                    <span class="section-badge">Ayuda técnica</span>
+                    <h2 class="section-heading__title" id="support-title">Guías y soporte</h2>
+                    <p class="section-heading__text">Recursos para elegir componentes correctos y evitar incompatibilidades comunes.</p>
+                </div>
+
+                <div class="support__grid">
+                    <article class="support-card">
+                        <h3 class="support-card__title">Cómo elegir una fuente</h3>
+                        <p class="support-card__text">Calcula voltaje, corriente y margen de seguridad.</p>
+                        <a href="#" class="support-card__link">Leer guía</a>
+                    </article>
+
+                    <article class="support-card">
+                        <h3 class="support-card__title">Relay vs MOSFET</h3>
+                        <p class="support-card__text">Diferencias para controlar cargas eléctricas.</p>
+                        <a href="#" class="support-card__link">Leer guía</a>
+                    </article>
+
+                    <article class="support-card">
+                        <h3 class="support-card__title">Compatibilidad con ESP32</h3>
+                        <p class="support-card__text">Evita errores con señales de 5V y lógica de 3.3V.</p>
+                        <a href="#" class="support-card__link">Leer guía</a>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BENEFICIOS -->
+        <section class="benefits" aria-labelledby="benefits-title">
+            <div class="container benefits__container">
+                <h2 class="sr-only" id="benefits-title">Beneficios de la tienda</h2>
+
+                <ul class="benefits__list">
+                    <li class="benefits__item">
+                        <strong>Compra técnica</strong>
+                        <span>Productos organizados por uso real.</span>
+                    </li>
+
+                    <li class="benefits__item">
+                        <strong>Compatibilidad</strong>
+                        <span>Advertencias para evitar errores de conexión.</span>
+                    </li>
+
+                    <li class="benefits__item">
+                        <strong>Kits/BOM</strong>
+                        <span>Listas de materiales para proyectos completos.</span>
+                    </li>
+
+                    <li class="benefits__item">
+                        <strong>Soporte</strong>
+                        <span>Orientado a estudiantes, makers y técnicos.</span>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container site-footer__container">
+
+            <div class="site-footer__brand">
+                <img src="/assets/logos/logo-nodex.png" alt="Tech Electro Store" class="site-footer__logo" />
+                <p class="site-footer__text">Componentes electrónicos y eléctricos para robótica, mecatrónica y electrónica aplicada.</p>
+            </div>
+
+            <nav class="site-footer__nav" aria-label="Enlaces del sitio">
+                <div class="site-footer__group">
+                    <h3 class="site-footer__title">Tienda</h3>
+                    <ul class="site-footer__list">
+                        <li><a href="./pages/catalogo.html">Catálogo</a></li>
+                        <li><a href="#projects">Proyectos</a></li>
+                        <li><a href="#kits">Kits/BOM</a></li>
+                        <li><a href="#quick-compare">Comparador</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__group">
+                    <h3 class="site-footer__title">Soporte</h3>
+                    <ul class="site-footer__list">
+                        <li><a href="#support">Guías técnicas</a></li>
+                        <li><a href="#">Compatibilidad</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__group">
+                    <h3 class="site-footer__title">Legal</h3>
+                    <ul class="site-footer__list">
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Términos de uso</a></li>
+                        <li><a href="#">Garantías</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="site-footer__bottom">
+            <div class="container site-footer__bottom-container">
+                <small>&copy; 2026 Tech Electro Store. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/catalog.js"></script>
+    <script src="./js/compare.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>
