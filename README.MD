@@ -11,7 +11,8 @@ El proyecto no se plantea como una tienda genérica, sino como una tienda-asiste
 Diseñar y desarrollar una plataforma web clara, moderna y funcional que permita explorar, comparar y seleccionar componentes electrónicos y eléctricos de forma técnica, ordenada y orientada a proyectos reales.
 
 
-#Público objetivo
+#Público objetivo:
+
     -Estudiantes de ingeniería.
     -Técnicos electrónicos y eléctricos.
     -Makers.
@@ -52,7 +53,8 @@ Este proyecto busca resolver ese problema mediante una estructura que permita:
     -Sección de guías y soporte.
 
 
-#Tecnologías usadas
+#Tecnologías usadas:
+
     HTML5.
     CSS3.
     JavaScript.
